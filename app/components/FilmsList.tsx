@@ -27,7 +27,7 @@ const FilmsList = () => {
     return (
          <div className="p-5 flex gap-5">
             {films && films.map((film: Film) => (
-                <FilmCard film={film}/>
+                <FilmCard key={film.id} film={film}/>
             ))}
         </div>
     )
