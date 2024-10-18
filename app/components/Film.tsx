@@ -10,7 +10,7 @@ interface FilmCardProps {
 const FilmCard: React.FC<FilmCardProps> = ({ film }) => {
   return (
     <Link className='cursor-pointer' href={`/films/${film.id}`}>
-        <img 
+        <Image 
             src={`https://image.tmdb.org/t/p/w500${film.poster_path}`} 
             alt={film.title} 
             className='md:w-[300px] md:h-[400px] w-[150px] h-[200px]'
