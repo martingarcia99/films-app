@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This project is about a website where you can find all types of movies and see their details in addition to the functionality of searching and filtering by genre. Application made with Nextjs, Reactjs, Typescript, Tailwindcss and the data is obtained from the TMDb movie api
 
 ## Getting Started
 
