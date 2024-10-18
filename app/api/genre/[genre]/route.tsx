@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
 
 export async function GET(req: Request) {
+    const url = new URL(req.url);
     const { searchParams } = new URL(req.url);
     const page = searchParams.get("page") || "1";
+    const genreId = url.pathname.split('/')[3];
 
     const options = {
         method: 'GET',
@@ -13,7 +15,7 @@ export async function GET(req: Request) {
     };
 
     try {
-        const res = await fetch(`https://api.themoviedb.org/3/movie/popular?language=es-ES&page=${page}`, options);
+        const res = await fetch(`https://api.themoviedb.org/3/discover/movie?language=es-ES&with_genres=${genreId}&page=${page}`, options);
         const data = await res.json();
         return NextResponse.json(data.results);
     } catch (err) {
