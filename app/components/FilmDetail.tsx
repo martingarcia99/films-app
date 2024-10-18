@@ -23,7 +23,7 @@ const FilmDetail: React.FC<FilmDetailProps> = ({ id }) => {
             <div className="absolute inset-0 backdrop-blur-md pt-20 bg-black bg-opacity-50"></div>
             <div className="relative gap-10 flex md:flex-row flex-col items-center md:p-0 px-5 py-10">
                 <div className="w-[300px] rounded-lg overflow-hidden">
-                    <Image alt={film.title} src={`https://image.tmdb.org/t/p/w500${film.poster_path}`}/>
+                    <Image alt={film.title} src={`https://image.tmdb.org/t/p/w500${film.poster_path}`} width={300} height={400}/>
                 </div>
                 <div className='text-white gap-5 flex flex-col md:max-w-5xl w-5/6'>
                     <h1 className="text-3xl font-bold">{film.title}<span className="font-normal">{` (${date.getFullYear()})`}</span></h1>
