@@ -13,7 +13,7 @@ export async function GET(req: Request) {
     };
 
     try {
-        const res = await fetch(`https://api.themoviedb.org/3/movie/popular?language=es-ES&page=${page}`, options);
+        const res = await fetch(`https://api.themoviedb.org/3/movie/top_rated?language=es-ES&page=${page}`, options);
         const data = await res.json();
         return NextResponse.json(data.results);
     } catch (err) {

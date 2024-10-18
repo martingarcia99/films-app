@@ -1,11 +1,7 @@
+import Link from 'next/link';
 import React from 'react'
-import Image from 'next/image'
-
-interface Film{
-    id: string,
-    imagen: string,
-    titulo: string
-}
+import { Film } from '../interfaces/FilmInterface';
+import Image from 'next/image';
 
 interface FilmCardProps {
     film: Film;
@@ -13,11 +9,13 @@ interface FilmCardProps {
 
 const FilmCard: React.FC<FilmCardProps> = ({ film }) => {
   return (
-    <div className='rounded-lg shadow-xl'>
-        <div>
-            <Image src={film.imagen} alt={film.titulo} width={200} height={250}/>
-        </div>
-    </div>
+    <Link className='cursor-pointer' href={`/films/${film.id}`}>
+        <Image 
+            src={`https://image.tmdb.org/t/p/w500${film.poster_path}`} 
+            alt={film.title} 
+            className='md:w-[300px] md:h-[400px] w-[150px] h-[200px]'
+        />
+    </Link>
   )
 }
 
