@@ -1,3 +1,5 @@
+![B7lB3tsGDR](https://github.com/user-attachments/assets/89268a8e-56ac-4842-aa1a-864e6f0fb9f2)
+
 This project is about a website where you can find all types of movies and see their details in addition to the functionality of searching and filtering by genre. Application made with Nextjs, Reactjs, Typescript, Tailwindcss and the data is obtained from the TMDb movie api
 
 ## Getting Started
