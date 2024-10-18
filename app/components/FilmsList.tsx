@@ -1,6 +1,5 @@
 'use client'
 
-import { URL_API } from '@/config';
 import React, { useState } from 'react'
 import FilmCard from '../components/Film';
 import { FiArrowRight, FiArrowLeft  } from "react-icons/fi";
@@ -27,7 +26,7 @@ const FilmsPage: React.FC<FilmsPage> = ({ url, title }) => {
         setPage(prevPage => Math.max(prevPage - 1, 1));
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
-    const { data: films, error } = useSWR<Film[]>(`${URL_API}/api/${url}?page=${page}`, fetcher, { suspense: true });
+    const { data: films, error } = useSWR<Film[]>(`/api/${url}?page=${page}`, fetcher, { suspense: true });
 
     if (error) return <div>Error al cargar los datos</div>;
 

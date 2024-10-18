@@ -1,6 +1,5 @@
 'use client'
 
-import { URL_API } from '@/config'
 import React from 'react'
 import FilmCard from './Film';
 import Link from 'next/link';
@@ -15,7 +14,7 @@ interface FilmsCarrusel{
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const FilmsCarrusel: React.FC<FilmsCarrusel> = ({ title, url }) => {
-    const { data: films, error } = useSWR<Film[]>(`${URL_API}/api/${url}?page=1`, fetcher, { suspense: true });
+    const { data: films, error } = useSWR<Film[]>(`/api/${url}?page=1`, fetcher, { suspense: true });
 
     if (error) return <div>Error al cargar los datos</div>;
 

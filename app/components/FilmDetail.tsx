@@ -1,5 +1,4 @@
 import { Film } from '@/app/interfaces/FilmInterface';
-import { URL_API } from '@/config';
 import Image from 'next/image';
 import React from 'react'
 import useSWR from 'swr';
@@ -12,7 +11,7 @@ interface FilmDetailProps{
 
 const FilmDetail: React.FC<FilmDetailProps> = ({ id }) => {
 
-    const { data: film, error } = useSWR<Film>(`${URL_API}/api/films/${id}`, fetcher, { suspense: true });
+    const { data: film, error } = useSWR<Film>(`/api/films/${id}`, fetcher, { suspense: true });
 
     const date = new Date(film!.release_date);
 

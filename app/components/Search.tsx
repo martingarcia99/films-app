@@ -1,4 +1,3 @@
-import { URL_API } from '@/config';
 import React, { useState } from 'react'
 import { Film } from '../interfaces/FilmInterface';
 import Link from 'next/link';
@@ -21,7 +20,7 @@ const Search: React.FC<SearchProps> = ({ close }) => {
         setSearchQuery(query);
 
         try{
-            const res = await fetch(`${URL_API}/api/search?search=${query}`);
+            const res = await fetch(`/api/search?search=${query}`);
 
             const films: Film[] = await res.json();
 
